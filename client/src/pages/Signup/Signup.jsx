@@ -1,8 +1,28 @@
 import { Link } from 'react-router-dom';
 import login from '../../assets/images/login/login.svg'
+import { useContext } from 'react'
+import { AuthContext } from '../../provider/AuthProvider';
+
 const Signup = () => {
+
+    const { createUser } = useContext(AuthContext)
+
     const handleSignup = (event) => {
         event.preventDefault();
+        const form = event.target;
+
+        const name = form.name.value;
+        const email = form.email.value;
+        const password = form.password.value;
+        const confirm = form.confirm.value;
+
+        createUser(email, password)
+            .then(result => {
+                console.log(result.user);
+            })
+            .then(error => console.log(error));
+
+        console.log(name, email, password, confirm);
     }
     return (
         <div className="hero min-h-screen bg-base-200">
@@ -15,6 +35,12 @@ const Signup = () => {
                         <h1 className="text-5xl font-bold">Sign Up now!</h1>
 
                         <form onSubmit={handleSignup}>
+                            <div className="form-control">
+                                <label className="label">
+                                    <span className="label-text">Name</span>
+                                </label>
+                                <input type="text" placeholder="name" name='name' className="input input-bordered" />
+                            </div>
                             <div className="form-control">
                                 <label className="label">
                                     <span className="label-text">Email</span>
@@ -38,7 +64,7 @@ const Signup = () => {
                                 </label>
                             </div>
                             <div className="form-control mt-6">
-                                <input className="btn bg-orange-600 hover:bg-orange-500 text-white" defaultValue={'Login'} type="submint" />
+                                <input className="btn bg-orange-600 hover:bg-orange-500 text-white" defaultValue={'Login'} type="submit" />
                             </div>
                             <p className='mt-5'>Already have an Account?   <Link to='/login' className='text-orange-600 font-bold'> Login</Link></p>
                         </form>
