@@ -6,7 +6,7 @@ const Footer = () => {
     return (
         <footer className="footer p-10 bg-base-200 text-base-content">
             <aside>
-                <Link className="btn btn-ghost normal-case text-xl"><img src={logo} alt="" /></Link>
+                <Link className="btn btn-ghost normal-case text-xl h-20"><img className='h-full' src={logo} alt="" /></Link>
                 <p>ACME Industries Ltd.<br />Providing reliable tech since 1992</p>
             </aside>
             <nav>
