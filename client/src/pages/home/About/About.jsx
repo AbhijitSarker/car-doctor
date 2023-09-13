@@ -14,7 +14,7 @@ const About = () => {
                     <h1 className="text-5xl font-bold">We are qualified and of experience in this field!</h1>
                     <p className="">Provident cupiditate voluptatem et in. Quaerat fugiat ut assumenda excepturi exercitationem quasi. In deleniti eaque aut repudiandae et a id nisi.</p>
                     <p className="">Provident cupiditate voluptatem et in. Quaerat fugiat ut assumenda excepturi exercitationem quasi. In deleniti eaque aut repudiandae et a id nisi.</p>
-                    <button className="btn btn-error">Get More Info</button>
+                    <button className="btn bg-orange-600 text-white  hover:bg-orange-500 hover:text-white">Get More Info</button>
                 </div>
             </div>
         </div>

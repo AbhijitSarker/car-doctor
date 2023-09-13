@@ -19,16 +19,16 @@ const Banner = () => {
                         <h2 className='text-6xl  font-bold'>Affordable Price For Car Servicing</h2>
                         <p className='text-xl'>There are many variations of passages of available, but the majority have suffered alteration in some forms</p>
                         <div>
-                            <button className="btn btn-error mr-5">Discover More</button>
-                            <button className="btn btn-outline btn-error">Latest Projects</button>
+                            <button className="btn bg-orange-600 border-0 mr-5 text-white">Discover More</button>
+                            <button className="btn btn-outline border border-2 border-orange-600 text-white hover:bg-orange-500 hover:text-white">Latest Projects</button>
                         </div>
 
                     </div>
                 </div>
 
                 <div className="absolute flex justify-end transform -translate-y-1/2 left-5 right-5 bottom-5">
-                    <a href="#slide4" className="btn btn-circle mr-5">❮</a>
-                    <a href="#slide2" className="btn btn-circle">❯</a>
+                    <a href="#slide4" className="btn btn-circle mr-5 hover:bg-orange-600">❮</a>
+                    <a href="#slide2" className="btn btn-circle hover:bg-orange-600">❯</a>
                 </div>
             </div>
             <div id="slide2" className="carousel-item relative w-full">
@@ -37,16 +37,16 @@ const Banner = () => {
                     <div className='text-white space-y-7 w-1/2'>
                         <h2 className='text-6xl  font-bold'>Affordable Price For Car Servicing</h2>
                         <p className='text-xl'>There are many variations of passages of available, but the majority have suffered alteration in some forms</p>
-                        <div>
-                            <button className="btn btn-error mr-5">Discover More</button>
-                            <button className="btn btn-outline btn-error">Latest Projects</button>
+                        <div className=''>
+                            <button className="btn bg-orange-600 border-0 mr-5 text-white">Discover More</button>
+                            <button className="btn btn-outline border border-2 border-orange-600 text-white">Latest Projects</button>
                         </div>
 
                     </div>
                 </div>
                 <div className="absolute flex justify-end transform -translate-y-1/2 left-5 right-5 bottom-5">
-                    <a href="#slide1" className="btn btn-circle mr-5">❮</a>
-                    <a href="#slide3" className="btn btn-circle">❯</a>
+                    <a href="#slide1" className="btn btn-circle mr-5 hover:bg-orange-600">❮</a>
+                    <a href="#slide3" className="btn btn-circle hover:bg-orange-600">❯</a>
                 </div>
             </div>
             <div id="slide3" className="carousel-item relative w-full">
@@ -56,15 +56,15 @@ const Banner = () => {
                         <h2 className='text-6xl  font-bold'>Affordable Price For Car Servicing</h2>
                         <p className='text-xl'>There are many variations of passages of available, but the majority have suffered alteration in some forms</p>
                         <div>
-                            <button className="btn btn-error mr-5">Discover More</button>
-                            <button className="btn btn-outline btn-error">Latest Projects</button>
+                            <button className="btn bg-orange-600 border-0 mr-5 text-white">Discover More</button>
+                            <button className="btn btn-outline border border-2 border-orange-600 text-white">Latest Projects</button>
                         </div>
 
                     </div>
                 </div>
                 <div className="absolute flex justify-end transform -translate-y-1/2 left-5 right-5 bottom-5">
-                    <a href="#slide2" className="btn btn-circle mr-5">❮</a>
-                    <a href="#slide4" className="btn btn-circle">❯</a>
+                    <a href="#slide2" className="btn btn-circle mr-5 hover:bg-orange-600">❮</a>
+                    <a href="#slide4" className="btn btn-circle hover:bg-orange-600">❯</a>
                 </div>
             </div>
             <div id="slide4" className="carousel-item relative w-full">
@@ -74,15 +74,15 @@ const Banner = () => {
                         <h2 className='text-6xl  font-bold'>Affordable Price For Car Servicing</h2>
                         <p className='text-xl'>There are many variations of passages of available, but the majority have suffered alteration in some forms</p>
                         <div>
-                            <button className="btn btn-error mr-5">Discover More</button>
-                            <button className="btn btn-outline btn-error">Latest Projects</button>
+                            <button className="btn bg-orange-600 border-0 mr-5 text-white">Discover More</button>
+                            <button className="btn btn-outline border border-2 border-orange-600 text-white">Latest Projects</button>
                         </div>
 
                     </div>
                 </div>
                 <div className="absolute flex justify-end transform -translate-y-1/2 left-5 right-5 bottom-5">
-                    <a href="#slide3" className="btn btn-circle mr-5">❮</a>
-                    <a href="#slide1" className="btn btn-circle">❯</a>
+                    <a href="#slide3" className="btn btn-circle hover:bg-orange-600 mr-5">❮</a>
+                    <a href="#slide1" className="btn btn-circle hover:bg-orange-600 ">❯</a>
                 </div>
             </div>
         </div>

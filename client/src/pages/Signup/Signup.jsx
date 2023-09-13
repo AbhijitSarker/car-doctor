@@ -1,7 +1,7 @@
 import { Link } from 'react-router-dom';
 import login from '../../assets/images/login/login.svg'
-const Login = () => {
-    const handleLogin = (event) => {
+const Signup = () => {
+    const handleSignup = (event) => {
         event.preventDefault();
     }
     return (
@@ -12,9 +12,9 @@ const Login = () => {
                 </div>
                 <div className="card flex-shrink-0 w-full max-w-sm shadow-2xl bg-base-100">
                     <div className="card-body">
-                        <h1 className="text-5xl font-bold">Login now!</h1>
+                        <h1 className="text-5xl font-bold">Sign Up now!</h1>
 
-                        <form onSubmit={handleLogin}>
+                        <form onSubmit={handleSignup}>
                             <div className="form-control">
                                 <label className="label">
                                     <span className="label-text">Email</span>
@@ -26,14 +26,21 @@ const Login = () => {
                                     <span className="label-text">Password</span>
                                 </label>
                                 <input type="text" placeholder="password" name='password' className="input input-bordered" />
+
+                            </div>
+                            <div className="form-control">
+                                <label className="label">
+                                    <span className="label-text">Confirm Password</span>
+                                </label>
+                                <input type="text" placeholder="confirm password" name='confirm' className="input input-bordered" />
                                 <label className="label">
                                     <a href="#" className="label-text-alt link link-hover">Forgot password?</a>
                                 </label>
                             </div>
                             <div className="form-control mt-6">
-                                <input className="btn btn-primary" defaultValue={'Login'} type="submint" />
+                                <input className="btn bg-orange-600 hover:bg-orange-500 text-white" defaultValue={'Login'} type="submint" />
                             </div>
-                            <p className='mt-5'>Dont have an Account?   <Link to='/signup' className='text-orange-600 font-bold'> Sign Up</Link></p>
+                            <p className='mt-5'>Already have an Account?   <Link to='/login' className='text-orange-600 font-bold'> Login</Link></p>
                         </form>
                     </div>
                 </div>
@@ -42,4 +49,4 @@ const Login = () => {
     );
 };
 
-export default Login;
+export default Signup;

@@ -7,7 +7,7 @@ const ServiceCard = ({ service }) => {
                 <h2 className="card-title">{title}!</h2>
                 <p>Price: ${price}</p>
                 <div className="card-actions justify-end">
-                    <button className="btn btn-primary">Buy Now</button>
+                    <button className="btn bg-orange-600 text-white  hover:bg-orange-500 hover:text-white">Buy Now</button>
                 </div>
             </div>
         </div>
