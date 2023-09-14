@@ -14,7 +14,11 @@ const NavBar = () => {
     const navItems = <>
         <li><Link>Home</Link></li>
         <li>  <Link>About</Link> </li>
-        <li><Link>Contact</Link></li>
+
+        {
+            user && <li><Link to='/bookings'>Bookings</Link></li>
+        }
+
     </>
     return (
         <div className="navbar bg-base-100 h-24">
