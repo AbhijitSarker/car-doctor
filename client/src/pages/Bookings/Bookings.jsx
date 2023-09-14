@@ -1,5 +1,6 @@
 import { useContext, useEffect, useState } from "react";
 import { AuthContext } from "../../provider/AuthProvider";
+import BookingRow from "./BookingRow";
 
 const Bookings = () => {
     const { user } = useContext(AuthContext)
@@ -11,7 +12,49 @@ const Bookings = () => {
         fetch(url)
             .then(res => res.json())
             .then(data => setBookings(data))
-    }, [])
+    }, [url])
+
+    const handleDelete = id => {
+        const proceed = confirm('Are you sure you want to delete this booking?');
+        if (proceed) {
+            fetch(`http://localhost:5000/bookings/${id}`, {
+                method: 'DELETE',
+
+            })
+                .then(res => res.json())
+                .then(data => {
+                    console.log(data);
+                    if (data.deletedCount > 0) {
+                        alert('Deleted');
+
+                        const remaining = bookings.filter(booking => booking._id !== id);
+
+                        setBookings(remaining)
+                    }
+                })
+        }
+
+    }
+
+    const handleConfirm = (id) => {
+        fetch(`http://localhost:5000/bookings/${id}`, {
+            method: 'PATCH',
+            headers: { 'content-type': 'application/json' },
+            body: JSON.stringify({ status: 'confirm' })
+        })
+            .then(res => res.json())
+            .then(data => {
+                console.log(data);
+                if (data.modifiedCount > 0) {
+                    const remaining = bookings.filter(booking => booking._id !== id)
+                    const updated = bookings.find(booking => booking._id === id)
+                    updated.status = 'confirm';
+                    const newBookings = [updated, ...remaining];
+                    setBookings(newBookings);
+                }
+            })
+    };
+
     return (
         <div>
             Bookings: {bookings.length}
@@ -21,48 +64,25 @@ const Bookings = () => {
                     <thead>
                         <tr>
                             <th>
-                                <label>
-                                    <input type="checkbox" className="checkbox" />
-                                </label>
+
                             </th>
+                            <th>Avatar</th>
                             <th>Name</th>
-                            <th>Job</th>
-                            <th>Favorite Color</th>
+                            <th>Service</th>
+                            <th>Date</th>
+                            <th>Price</th>
                             <th></th>
                         </tr>
                     </thead>
                     <tbody>
-                        {/* row 1 */}
-                        <tr>
-                            <th>
-                                <label>
-                                    <input type="checkbox" className="checkbox" />
-                                </label>
-                            </th>
-                            <td>
-                                <div className="flex items-center space-x-3">
-                                    <div className="avatar">
-                                        <div className="mask mask-squircle w-12 h-12">
-                                            <img src="/tailwind-css-component-profile-2@56w.png" alt="Avatar Tailwind CSS Component" />
-                                        </div>
-                                    </div>
-                                    <div>
-                                        <div className="font-bold">Hart Hagerty</div>
-                                        <div className="text-sm opacity-50">United States</div>
-                                    </div>
-                                </div>
-                            </td>
-                            <td>
-                                Zemlak, Daniel and Leannon
-                                <br />
-                                <span className="badge badge-ghost badge-sm">Desktop Support Technician</span>
-                            </td>
-                            <td>Purple</td>
-                            <th>
-                                <button className="btn btn-ghost btn-xs">details</button>
-                            </th>
-                        </tr>
-                        {/* row 2 */}
+                        {
+                            bookings.map(booking => <BookingRow
+                                key={booking._id}
+                                booking={booking}
+                                handleDelete={handleDelete}
+                                handleConfirm={handleConfirm}
+                            ></BookingRow>)
+                        }
 
                     </tbody>
                     {/* foot */}
