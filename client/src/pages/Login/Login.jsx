@@ -47,7 +47,7 @@ const Login = () => {
                                 </label>
                             </div>
                             <div className="form-control mt-6">
-                                <input className="btn btn-primary" defaultValue={'Login'} type="submint" />
+                                <input className="btn btn-primary" defaultValue={'Login'} type="submit" />
                             </div>
                             <p className='mt-5'>Dont have an Account?   <Link to='/signup' className='text-orange-600 font-bold'> Sign Up</Link></p>
                         </form>
