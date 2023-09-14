@@ -42,10 +42,6 @@ const NavBar = () => {
                         : <Link to='/login'><button className="btn bg-orange-600 text-white  hover:bg-orange-500 hover:text-white">Login</button></Link>
                 }
 
-                {/* <Link to='/login'><button className="btn bg-orange-600 text-white  hover:bg-orange-500 hover:text-white">Login</button></Link>
-                <button className="btn bg-orange-600 text-white  hover:bg-orange-500 hover:text-white">Login</button> */}
-
-
             </div>
         </div>
     );
