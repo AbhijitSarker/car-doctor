@@ -24,7 +24,7 @@ const Login = () => {
             .then(result => {
                 const user = result.user;
                 const loggedUser = { email: user.email };
-                console.log(loggedUser);
+                // console.log(loggedUser);
 
                 fetch('http://localhost:5000/jwt', {
                     method: 'POST',
@@ -35,7 +35,7 @@ const Login = () => {
                 })
                     .then(res => res.json())
                     .then(data => {
-                        console.log(data);
+                        // console.log(data);
                         //warning: local storage IS not best place to store access token
                         localStorage.setItem('access_token', data.token);
                         navigate(from, { replace: true });
