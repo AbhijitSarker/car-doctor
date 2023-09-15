@@ -8,7 +8,10 @@ const NavBar = () => {
     const { user, logout } = useContext(AuthContext);
 
     const handleLogout = (event) => {
-        logout();
+        logout()
+            .then(() => {
+                localStorage.removeItem('access_token');
+            })
     };
 
     const navItems = <>
