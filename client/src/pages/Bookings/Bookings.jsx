@@ -8,7 +8,7 @@ const Bookings = () => {
     const [bookings, setBookings] = useState([]);
     const navigate = useNavigate();
 
-    const url = `http://localhost:5000/bookings?email=${user?.email}`;
+    const url = `https://server-ivory-kappa.vercel.app/bookings?email=${user?.email}`;
 
     useEffect(() => {
         fetch(url, {
@@ -31,7 +31,7 @@ const Bookings = () => {
     const handleDelete = id => {
         const proceed = confirm('Are you sure you want to delete this booking?');
         if (proceed) {
-            fetch(`http://localhost:5000/bookings/${id}`, {
+            fetch(`https://server-ivory-kappa.vercel.app/bookings/${id}`, {
                 method: 'DELETE',
 
             })
@@ -51,7 +51,7 @@ const Bookings = () => {
     }
 
     const handleConfirm = (id) => {
-        fetch(`http://localhost:5000/bookings/${id}`, {
+        fetch(`https://server-ivory-kappa.vercel.app/bookings/${id}`, {
             method: 'PATCH',
             headers: { 'content-type': 'application/json' },
             body: JSON.stringify({ status: 'confirm' })
@@ -103,9 +103,11 @@ const Bookings = () => {
                     <tfoot>
                         <tr>
                             <th></th>
+                            <th>Avatar</th>
                             <th>Name</th>
-                            <th>Job</th>
-                            <th>Favorite Color</th>
+                            <th>Service</th>
+                            <th>Date</th>
+                            <th>Price</th>
                             <th></th>
                         </tr>
                     </tfoot>

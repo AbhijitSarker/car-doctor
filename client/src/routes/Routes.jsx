@@ -28,12 +28,12 @@ const router = createBrowserRouter([
             {
                 path: "/book/:id",
                 element: <PrivateRoutes><BookService></BookService></PrivateRoutes>,
-                loader: ({ params }) => fetch(`http://localhost:5000/services/${params.id}`)
+                loader: ({ params }) => fetch(`https://server-ivory-kappa.vercel.app/services/${params.id}`)
             },
             {
                 path: "/bookings",
                 element: <PrivateRoutes><Bookings></Bookings></PrivateRoutes>,
-                // loader: () => fetch(`http://localhost:5000/bookings/`)
+                // loader: () => fetch(`https://server-ivory-kappa.vercel.app/bookings/`)
             }
         ]
     },

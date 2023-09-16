@@ -2,6 +2,7 @@ import { Link, useLocation, useNavigate } from 'react-router-dom';
 import login from '../../assets/images/login/login.svg'
 import { useContext } from 'react';
 import { AuthContext } from '../../provider/AuthProvider';
+import SocialLogin from '../shared/SocialLogin/SocialLogin';
 
 const Login = () => {
     const { signin } = useContext(AuthContext);
@@ -23,24 +24,8 @@ const Login = () => {
         signin(email, password)
             .then(result => {
                 const user = result.user;
-                const loggedUser = { email: user.email };
                 // console.log(loggedUser);
-
-                fetch('http://localhost:5000/jwt', {
-                    method: 'POST',
-                    headers: {
-                        'content-type': 'application/json'
-                    },
-                    body: JSON.stringify(loggedUser)
-                })
-                    .then(res => res.json())
-                    .then(data => {
-                        // console.log(data);
-                        //warning: local storage IS not best place to store access token
-                        localStorage.setItem('access_token', data.token);
-                        navigate(from, { replace: true });
-
-                    })
+                navigate(from, { replace: true });
             })
             .catch(error => console.log(error))
     }
@@ -73,6 +58,7 @@ const Login = () => {
                             <div className="form-control mt-6">
                                 <input className="btn btn-primary" defaultValue={'Login'} type="submit" />
                             </div>
+                            <SocialLogin></SocialLogin>
                             <p className='mt-5'>Dont have an Account?   <Link to='/signup' className='text-orange-600 font-bold'> Sign Up</Link></p>
                         </form>
                     </div>

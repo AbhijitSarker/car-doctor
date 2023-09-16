@@ -27,7 +27,7 @@ const BookService = () => {
             price: price
         }
 
-        fetch('http://localhost:5000/bookings', {
+        fetch('https://server-ivory-kappa.vercel.app/bookings', {
             method: 'POST',
             headers: {
                 'content-type': 'application/json'
@@ -75,7 +75,7 @@ const BookService = () => {
                     </div>
                 </div>
                 <div className="form-control mt-6">
-                    <input className="btn btn-primary" type="submit" value='Login' />
+                    <input className="btn btn-primary" type="submit" value='Book' />
                 </div>
             </form>
         </div>

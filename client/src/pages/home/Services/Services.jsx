@@ -5,7 +5,7 @@ const Services = () => {
     const [services, setServices] = useState([])
     console.log(services)
     useEffect(() => {
-        fetch('http://localhost:5000/services')
+        fetch('https://server-ivory-kappa.vercel.app/services')
             .then(response => response.json())
             .then(data => setServices(data))
     }, [])
