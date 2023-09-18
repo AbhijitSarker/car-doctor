@@ -8,7 +8,7 @@ const Services = () => {
     const searchRef = useRef(null);
 
     useEffect(() => {
-        fetch(`https://server-ivory-kappa.vercel.app/?search=${search}&sort=${asc ? 'asc' : 'desc'}`)
+        fetch(`https://server-ivory-kappa.vercel.app/services?search=${search}&sort=${asc ? 'asc' : 'desc'}`)
             .then(response => response.json())
             .then(data => setServices(data))
     }, [asc, search]);
